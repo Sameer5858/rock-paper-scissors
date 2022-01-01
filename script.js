@@ -38,9 +38,9 @@ btns.forEach(function playGame(btn) {
   btn.addEventListener("click", (e) => {
     const computerSelection = computerPlay();
     const playerSelection = e.target.innerHTML.toLowerCase();
-    document.getElementById("results").innerHTML += `${playRound(
+    document.getElementById("round-results").innerHTML = playRound(
       playerSelection,
       computerSelection
-    )} <br>`;
+    );
   });
 });
