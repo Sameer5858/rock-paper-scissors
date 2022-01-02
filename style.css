@@ -1,20 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 html,
 body {
   box-sizing: border-box;
+  font-family: "Bebas Neue";
 }
 body {
-  background-color: #36393e;
+  background-color: #575976;
   color: white;
   height: 100vh;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 .header {
-  background-color: #1e2124;
+  background-color: #ff717e;
   display: flex;
   font-size: 50px;
   justify-content: center;
   padding: 20px 0 30px 0;
+  color: black;
 }
 .rules {
   display: flex;
@@ -22,6 +27,7 @@ body {
   align-items: center;
   font-size: 40px;
   margin: 20px;
+  color: black;
 }
 .btns {
   display: flex;
@@ -35,8 +41,10 @@ button {
   height: 50px;
   font-size: 24px;
   padding: 0;
-  background: #7289da;
-  border: solid black;
+  background: #29dcff;
+  border: solid #ff717e;
+  color: black;
+  font-family: "Bebas Neue";
 }
 .results {
   display: flex;
@@ -44,43 +52,51 @@ button {
   font-size: 24px;
   margin-bottom: 30px;
   flex-direction: column;
+  color: black;
+}
+#round-results {
+  color: white;
 }
 #running-score {
   display: flex;
   justify-content: center;
   gap: 50px;
   font-size: 24px;
+  color: black;
 }
 .player {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 .computer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 .ties {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 #player-score {
-  border: solid #7289da;
-  background: #424549;
+  border: solid #ff717e;
+  background: #29dcff;
   width: 100px;
   text-align: center;
 }
 #ties {
-  border: solid #7289da;
-  background: #424549;
+  border: solid #ff717e;
+  background: #29dcff;
   width: 100px;
   text-align: center;
 }
 #computer-score {
-  border: solid #7289da;
-  background: #424549;
+  border: solid#ff717e;
+  background: #29dcff;
   width: 100px;
   text-align: center;
 }
@@ -91,6 +107,5 @@ button {
   align-items: center;
   font-size: 36px;
   margin-top: 50px;
-  color: #57f287;
   gap: 10px;
 }

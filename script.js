@@ -33,15 +33,6 @@ function playRound(playerSelection, computerSelection) {
     return "Tis a tie";
   }
 }
-//5 set game
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let askQuestion = prompt("choose between rock paper and scissors");
-    const playerSelection = askQuestion.toLowerCase();
-    const computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-  }
-}
 //Takes click event of .btn class and puts the text inside playGame function
 const btns = document.querySelectorAll("button");
 btns.forEach(function playGame(btn) {
@@ -58,11 +49,15 @@ btns.forEach(function playGame(btn) {
       document.getElementById("ties").innerHTML = ties;
     }
     if (playerWins === 5) {
-      document.getElementById("winner").innerHTML = `You win <br> 
-      <a style="text-decoration: none; font-size: 24px; color: white;" href="index.html">Play again</a>`;
+      document.getElementById(
+        "winner"
+      ).innerHTML = `<div style="color: #57f287;"> You win </div>
+      <a style="text-decoration: none; font-size: 24px; color: #29DCFF;" href="index.html">Play again</a>`;
     } else if (computerWins === 5) {
-      document.getElementById("winner").innerHTML = `Computer Wins <br> 
-      <a style="text-decoration: none; font-size: 24px; color: white;" href="index.html" sty>Play again</a>`;
+      document.getElementById(
+        "winner"
+      ).innerHTML = `<div style="color: #FF2400	;">Computer Wins </div> 
+      <a style="text-decoration: none; font-size: 24px; color: #29DCFF;" href="index.html" sty>Play again</a>`;
     }
   });
 });
