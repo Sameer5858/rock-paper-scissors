@@ -6,20 +6,30 @@ function computerPlay() {
   return result;
 }
 //playRound made to get the result for one round
+let playerWins = 0;
+let computerWins = 0;
+let ties = 0;
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "paper") {
+    computerWins++;
     return "You Lose! Paper beats Rock";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    playerWins++;
     return "You Win! Rock beats Scissors";
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    computerWins++;
     return "You Lose! Scissors beats Paper";
   } else if (playerSelection === "paper" && computerSelection === "rock") {
+    playerWins++;
     return "You Win! Paper beats Rock";
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    computerWins++;
     return "You Lose! Rock beats Scissors";
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    playerWins++;
     return "You Win! Scissors beats Paper";
   } else if (playerSelection === computerSelection) {
+    ties++;
     return "Tis a tie";
   }
 }
@@ -38,9 +48,18 @@ btns.forEach(function playGame(btn) {
   btn.addEventListener("click", (e) => {
     const computerSelection = computerPlay();
     const playerSelection = e.target.innerHTML.toLowerCase();
-    document.getElementById("round-results").innerHTML = playRound(
-      playerSelection,
-      computerSelection
-    );
+    if (playerWins < 5 && computerWins < 5) {
+      document.getElementById("round-results").innerHTML = playRound(
+        playerSelection,
+        computerSelection
+      );
+      document.getElementById(
+        "running-score"
+      ).innerHTML = `Your Score : ${playerWins} <br>  Computer Score : ${computerWins} <br> tie : ${ties}`;
+    } else if (playerWins === 5) {
+      document.getElementById("winner").innerHTML = `You win`;
+    } else if (computerWins === 5) {
+      document.getElementById("winner").innerHTML = `Computer Wins`;
+    }
   });
 });
