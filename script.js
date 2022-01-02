@@ -43,7 +43,7 @@ function game() {
   }
 }
 //Takes click event of .btn class and puts the text inside playGame function
-const btns = document.querySelectorAll(".btn");
+const btns = document.querySelectorAll("button");
 btns.forEach(function playGame(btn) {
   btn.addEventListener("click", (e) => {
     const computerSelection = computerPlay();
@@ -53,13 +53,16 @@ btns.forEach(function playGame(btn) {
         playerSelection,
         computerSelection
       );
-      document.getElementById(
-        "running-score"
-      ).innerHTML = `Your Score : ${playerWins} <br>  Computer Score : ${computerWins} <br> tie : ${ties}`;
-    } else if (playerWins === 5) {
-      document.getElementById("winner").innerHTML = `You win`;
+      document.getElementById("computer-score").innerHTML = computerWins;
+      document.getElementById("player-score").innerHTML = playerWins;
+      document.getElementById("ties").innerHTML = ties;
+    }
+    if (playerWins === 5) {
+      document.getElementById("winner").innerHTML = `You win <br> 
+      <a style="text-decoration: none; font-size: 24px; color: white;" href="index.html">Play again</a>`;
     } else if (computerWins === 5) {
-      document.getElementById("winner").innerHTML = `Computer Wins`;
+      document.getElementById("winner").innerHTML = `Computer Wins <br> 
+      <a style="text-decoration: none; font-size: 24px; color: white;" href="index.html" sty>Play again</a>`;
     }
   });
 });
