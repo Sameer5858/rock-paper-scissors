@@ -51,13 +51,13 @@ btns.forEach(function playGame(btn) {
     if (playerWins === 5) {
       document.getElementById(
         "winner"
-      ).innerHTML = `<div style="color: #57f287;"> You win </div>
-      <a style="text-decoration: none; font-size: 24px; color: #29DCFF;" href="index.html">Play again</a>`;
+      ).innerHTML = `<div style="color: #00B32C;"> You win </div>
+      <a style="text-decoration: none; font-size: 24px; color: #00B32C;" href="index.html">Play again</a>`;
     } else if (computerWins === 5) {
       document.getElementById(
         "winner"
-      ).innerHTML = `<div style="color: #FF2400	;">Computer Wins </div> 
-      <a style="text-decoration: none; font-size: 24px; color: #29DCFF;" href="index.html" sty>Play again</a>`;
+      ).innerHTML = `<div style="color: #E40010	;">Computer Wins </div> 
+      <a style="text-decoration: none; font-size: 24px; color: #E40010;" href="index.html" sty>Play again</a>`;
     }
   });
 });
