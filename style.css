@@ -44,11 +44,17 @@ body {
 }
 button {
   padding: 75px 75px 75px 75px;
-  background: transparent;
   color: black;
   font-family: "Patrick Hand";
   border: 5px solid black;
   border-radius: 50%;
+}
+button:hover {
+  -webkit-filter: brightness(70%);
+}
+button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 #paper,
 #rock,
